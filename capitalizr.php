@@ -28,7 +28,7 @@ class Capitalizr {
 			preg_replace_callback('
 				/(?P<open_tag><h(?:2|3)>)
 				(?P<content>.+)
-				(?P<close_tag><\/h(?:2|3)>)/ix', 
+				(?P<close_tag><\/h(?:2|3)>)/ixs', 
 
 				function($matches) {
 					extract($matches);
@@ -44,7 +44,7 @@ class Capitalizr {
 	{
 		// Fixes potential issue with a word next to a closing angle bracket.
 		// <span>step 1 will become <span>Step 1
-		$content = preg_replace_callback('/(?<=>)[a-z]/', function( $matches ) {
+		$content = preg_replace_callback('/(?<=>| ")[a-z]/', function( $matches ) {
 			return strtoupper( $matches[0] );
 		}, ucwords($content) );
 

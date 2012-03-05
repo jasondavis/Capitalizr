@@ -24,7 +24,9 @@ equals(
 	'10 Ways to Think About Becoming a Better Developer'
 );
 
-
+/*
+ * Heading Tests
+ */
 
 $C->content['post_content'] = '<h2><span>step 1: </span>cut a hole in a box</h2>';
 equals(
@@ -36,4 +38,18 @@ $C->content['post_content'] = '<h3>here is how you learn about javascript</h3>';
 equals(
 	$C->update_headings(),
 	'<h3>Here is How You Learn About JavaScript</h3>'
+);
+
+$C->content['post_content'] = '<h3>here is what you "must" know about php</h3>';
+equals(
+	$C->update_headings(),
+	'<h3>Here is What You "Must" Know About PHP</h3>'
+);
+
+$C->content['post_content'] = '<h2>
+	the first steps
+</h2>';
+equals(
+	$C->update_headings(),
+	'<h2>The First Steps</h2>'
 );
