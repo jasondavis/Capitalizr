@@ -1,4 +1,4 @@
-This is a simple WordPress utility plugin that will auto-update the title and h2 + h2 tags of
+This is a simple WordPress utility plugin that will auto-update the title, h2, and h3 tags of
 a post when it is saved to the database. It ensures that words are correctly
 capitalized (or lowercased). 
 
